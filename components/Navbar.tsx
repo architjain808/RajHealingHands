@@ -17,22 +17,18 @@ const Navbar: React.FC = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    // Small delay to ensure mobile menu animation doesn't conflict
     setIsOpen(false);
-    setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          // Offset for fixed navbar
-          const headerOffset = 80;
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          });
-        }
-    }, 100);
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
   };
 
   const navItems = [
@@ -44,13 +40,13 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${scrolled || isOpen ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-teal-50 py-2' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${scrolled || isOpen ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-teal-50 py-2' : 'bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div 
             onClick={() => scrollToSection('home')}
-            className="flex items-center space-x-2 cursor-pointer group z-[101]"
+            className="flex items-center space-x-2 cursor-pointer group z-[1001]"
           >
             <div className="bg-teal-400 p-2 rounded-xl group-hover:rotate-12 transition-transform shadow-md">
               <Activity className="h-6 w-6 text-white" />
@@ -80,7 +76,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden z-[101]">
+          <div className="md:hidden z-[1001]">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 hover:text-teal-600 p-2 focus:outline-none"
@@ -97,25 +93,25 @@ const Navbar: React.FC = () => {
         {isOpen && (
           <MotionDiv
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: '100vh' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white border-t border-gray-100 shadow-xl overflow-hidden absolute w-full left-0 top-full z-[100]"
+            className="md:hidden bg-white/98 backdrop-blur-xl border-t border-gray-100 shadow-xl fixed top-0 left-0 w-full z-[999] pt-24"
           >
-            <div className="flex flex-col p-4 space-y-2 h-screen pb-32">
+            <div className="flex flex-col p-6 space-y-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="w-full text-left px-6 py-4 text-xl font-bold text-gray-700 hover:bg-teal-50 hover:text-teal-600 rounded-2xl transition-colors active:bg-teal-100"
+                  className="w-full text-left px-6 py-4 text-2xl font-bold text-gray-800 hover:bg-teal-50 hover:text-teal-600 rounded-3xl transition-colors active:bg-teal-100 flex justify-between items-center group"
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="pt-4 px-2">
+              <div className="pt-6">
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="w-full px-6 py-4 bg-teal-500 text-white rounded-2xl text-lg font-bold shadow-md active:scale-95 transition-transform"
+                  className="w-full px-6 py-5 bg-teal-500 text-white rounded-3xl text-xl font-bold shadow-lg active:scale-95 transition-transform"
                 >
                   Book Appointment Now
                 </button>

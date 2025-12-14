@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Phone, MapPin, Mail, Clock, ExternalLink, ArrowRight } from 'lucide-react';
+import { Send, Phone, MapPin, Mail, Clock, ExternalLink, ArrowRight, Star } from 'lucide-react';
 import { WHATSAPP_NUMBER } from '../constants';
 import { ContactFormState } from '../types';
 
@@ -19,6 +19,9 @@ const Contact: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const mapAddress = "Tapovan, opposite peeple tree hotel, saraye, Laxman Jhula, Uttarakhand 249192";
+  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(mapAddress)}&t=&z=17&ie=UTF8&iwloc=&output=embed`;
 
   return (
     <section id="contact" className="py-24 bg-white relative overflow-hidden">
@@ -73,22 +76,34 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Quick Links / Interactive Graphic Section */}
+            {/* Quick Links & Google Reviews */}
             <div className="grid grid-cols-2 gap-4">
+                 {/* Google Reviews Card */}
+                <div 
+                  className="bg-white rounded-2xl p-6 border-2 border-slate-100 shadow-lg relative overflow-hidden group cursor-pointer hover:border-teal-200"
+                  onClick={() => window.open('https://search.google.com/local/writereview?placeid=ChByYWogaGVhbGluZyBoYW5kSO2O7quQvYCACFoeEAAQARACGAAYARgCIhByYWogaGVhbGluZyBoYW5kkgEUcGh5c2lvdGhlcmFweV9jZW50ZXI', '_blank')}
+                >
+                    <div className="relative z-10">
+                        <div className="flex space-x-1 mb-2">
+                           <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                           <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                           <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                           <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                           <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                        </div>
+                        <p className="font-bold text-slate-800 text-lg">Google Reviews</p>
+                        <p className="text-xs text-slate-500 font-semibold mt-1 flex items-center">Rate us 5 Stars <ExternalLink className="h-3 w-3 ml-1" /></p>
+                    </div>
+                    {/* Google G Logo Decoration */}
+                    <div className="absolute -right-2 -bottom-4 text-9xl font-black text-slate-50 opacity-50 rotate-12 select-none group-hover:scale-110 transition-transform">G</div>
+                </div>
+
                 <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 border border-teal-200 relative overflow-hidden group cursor-pointer" onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})}>
                     <div className="relative z-10">
                         <p className="font-bold text-teal-800 text-lg">Services</p>
                         <p className="text-xs text-teal-600 font-semibold mt-1 flex items-center">Explore Treatments <ArrowRight className="h-3 w-3 ml-1" /></p>
                     </div>
                     <div className="absolute right-[-10px] bottom-[-10px] bg-teal-200 rounded-full w-16 h-16 opacity-50 group-hover:scale-150 transition-transform"></div>
-                </div>
-
-                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 relative overflow-hidden group cursor-pointer" onClick={scrollToTop}>
-                    <div className="relative z-10">
-                        <p className="font-bold text-slate-800 text-lg">Back to Top</p>
-                        <p className="text-xs text-slate-500 font-semibold mt-1 flex items-center">Start Over <ExternalLink className="h-3 w-3 ml-1" /></p>
-                    </div>
-                    <div className="absolute right-[-10px] bottom-[-10px] bg-slate-200 rounded-full w-16 h-16 opacity-50 group-hover:scale-150 transition-transform"></div>
                 </div>
             </div>
             
@@ -104,7 +119,7 @@ const Contact: React.FC = () => {
              <div className="h-64 w-full rounded-3xl overflow-hidden shadow-inner border-2 border-slate-100 relative group">
                <iframe 
                  title="Raj Healing Hands Location"
-                 src="https://maps.google.com/maps?q=Raj+Healing+Hands,+Tapovan,+opposite+peeple+tree+hotel,+saraye,+Laxman+Jhula,+Uttarakhand+249192&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                 src={mapSrc}
                  width="100%" 
                  height="100%" 
                  style={{ border: 0 }} 
@@ -113,7 +128,14 @@ const Contact: React.FC = () => {
                  referrerPolicy="no-referrer-when-downgrade"
                  className="grayscale-[20%] hover:grayscale-0 transition-all duration-500"
                />
-               <div className="absolute inset-0 pointer-events-none border-4 border-white/50 rounded-3xl"></div>
+               <a 
+                 href="https://maps.app.goo.gl/YRGeKoaadHBfzHJN4" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl text-xs font-bold shadow-md hover:bg-teal-500 hover:text-white transition-colors flex items-center"
+               >
+                 <MapPin className="h-3 w-3 mr-1" /> Get Directions
+               </a>
              </div>
 
              <form onSubmit={handleWhatsAppSubmit} className="space-y-4">
