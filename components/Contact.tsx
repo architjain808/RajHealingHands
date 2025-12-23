@@ -16,12 +16,10 @@ const Contact: React.FC = () => {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`, '_blank');
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const mapAddress = "Tapovan, opposite peeple tree hotel, saraye, Laxman Jhula, Uttarakhand 249192";
-  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(mapAddress)}&t=&z=17&ie=UTF8&iwloc=&output=embed`;
+  const clinicAddress = "Raj healing hands, Tapovan, opposite peeple tree hotel, saraye, Laxman Jhula, Uttarakhand 249192";
+  // Updated map embed using the provided share location as source hint
+  const mapSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.854079493175!2d78.3134636!3d30.133241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39091720d186c6c7%3A0xc6829107918262c6!2sRaj%20healing%20hands!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin`;
+  const directionsUrl = "https://maps.app.goo.gl/kJonpLgP8rToqrXW6";
 
   return (
     <section id="contact" className="py-24 bg-white relative overflow-hidden">
@@ -44,23 +42,23 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="space-y-6 flex-grow mb-8">
-              <div className="flex items-start space-x-4 p-4 rounded-2xl hover:bg-teal-50 transition-colors border border-transparent hover:border-teal-100 group cursor-pointer" onClick={() => window.open(`tel:+${WHATSAPP_NUMBER}`)}>
+              <div className="flex items-start space-x-4 p-4 rounded-2xl hover:bg-teal-50 transition-colors border border-transparent hover:border-teal-100 group cursor-pointer" onClick={() => window.open(`tel:+918979375090`)}>
                 <div className="bg-teal-100 p-3 rounded-full mt-1 group-hover:scale-110 transition-transform">
                   <Phone className="h-6 w-6 text-teal-700" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-slate-500 uppercase">Call or WhatsApp</p>
-                  <p className="text-xl font-bold text-slate-900">+91 73517 75090</p>
+                  <p className="text-xl font-bold text-slate-900">+91 89793 75090</p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4 p-4 rounded-2xl hover:bg-blue-50 transition-colors border border-transparent hover:border-blue-100 group">
+              <div className="flex items-start space-x-4 p-4 rounded-2xl hover:bg-blue-50 transition-colors border border-transparent hover:border-blue-100 group cursor-pointer" onClick={() => window.open(`mailto:rajhealinghands01@gmail.com`)}>
                 <div className="bg-blue-100 p-3 rounded-full mt-1 group-hover:scale-110 transition-transform">
                   <Mail className="h-6 w-6 text-blue-700" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-slate-500 uppercase">Email Us</p>
-                  <p className="text-xl font-bold text-slate-900">rajhealing@gmail.com</p>
+                  <p className="text-xl font-bold text-slate-900">rajhealinghands01@gmail.com</p>
                 </div>
               </div>
 
@@ -70,8 +68,8 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                    <p className="text-sm font-bold text-slate-500 uppercase">Working Hours</p>
-                   <p className="text-lg font-bold text-slate-900">Mon-Sat: 9am - 8pm</p>
-                   <p className="text-sm text-slate-500">Sunday: By Appointment</p>
+                   <p className="text-lg font-bold text-slate-900">10 AM - 6 PM</p>
+                   <p className="text-sm text-slate-500">7 Days a Week</p>
                 </div>
               </div>
             </div>
@@ -94,7 +92,6 @@ const Contact: React.FC = () => {
                         <p className="font-bold text-slate-800 text-lg">Google Reviews</p>
                         <p className="text-xs text-slate-500 font-semibold mt-1 flex items-center">Rate us 5 Stars <ExternalLink className="h-3 w-3 ml-1" /></p>
                     </div>
-                    {/* Google G Logo Decoration */}
                     <div className="absolute -right-2 -bottom-4 text-9xl font-black text-slate-50 opacity-50 rotate-12 select-none group-hover:scale-110 transition-transform">G</div>
                 </div>
 
@@ -129,7 +126,7 @@ const Contact: React.FC = () => {
                  className="grayscale-[20%] hover:grayscale-0 transition-all duration-500"
                />
                <a 
-                 href="https://maps.app.goo.gl/YRGeKoaadHBfzHJN4" 
+                 href={directionsUrl} 
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl text-xs font-bold shadow-md hover:bg-teal-500 hover:text-white transition-colors flex items-center"

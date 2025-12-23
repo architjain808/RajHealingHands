@@ -40,8 +40,8 @@ const About: React.FC = () => {
                 {/* 3D Doctor Avatar */}
                 <div className="absolute inset-8 rounded-full overflow-hidden border-8 border-white shadow-2xl bg-teal-50 flex items-center justify-center">
                   <img 
-                    src="https://api.dicebear.com/9.x/avataaars/svg?seed=DrAnshikaa&clothing=blazerAndShirt&eyes=happy&mouth=smile&hair=longHair" 
-                    alt="Dr. Anshikaa Arora Avatar" 
+                    src="https://api.dicebear.com/9.x/avataaars/svg?seed=Anshikka&clothing=blazerAndShirt&eyes=happy&mouth=smile&hair=longHair" 
+                    alt="Anshikka Arora Avatar" 
                     className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
                   />
                 </div>
@@ -69,13 +69,13 @@ const About: React.FC = () => {
             className="w-full md:w-1/2 text-center md:text-left"
           >
             <div className="inline-block bg-teal-100 text-teal-700 font-bold px-4 py-1 rounded-full text-sm mb-4">
-              👋 Meet Dr. Anshikaa
+              👋 Meet Anshikka Arora
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
               Healing with a <br/><span className="text-teal-500">Happy Heart</span>
             </h2>
             <p className="text-lg text-gray-600 mb-6 font-medium">
-              Hi there! I'm Dr. Anshikaa. I believe physiotherapy shouldn't be scary. My goal is to make your recovery journey as fun and effective as possible!
+              Hi there! I'm Anshikka Arora. I believe physiotherapy shouldn't be scary. My goal is to make your recovery journey as fun and effective as possible!
             </p>
             <p className="text-lg text-gray-600 mb-8">
               We use colorful equipment, engaging exercises, and a lot of positivity to get you moving again.

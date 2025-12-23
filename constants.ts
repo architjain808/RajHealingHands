@@ -1,7 +1,7 @@
 import { Activity, Heart, UserCheck, Zap, Smile, Brain, Baby, Accessibility } from 'lucide-react';
 import { Service, Review } from './types';
 
-export const WHATSAPP_NUMBER = "917351775090";
+export const WHATSAPP_NUMBER = "918979375090";
 
 export const SERVICES: Service[] = [
   {
@@ -54,7 +54,7 @@ export const REVIEWS: Review[] = [
     author: 'Priya Sharma',
     role: 'Back Pain Relief',
     rating: 5,
-    text: "Dr. Anshikaa is magical! The clinic has such a happy vibe, and my pain is completely gone.",
+    text: "Anshikka Arora is magical! The clinic has such a happy vibe, and my pain is completely gone.",
     time: "2 weeks ago",
   },
   {
@@ -70,7 +70,7 @@ export const REVIEWS: Review[] = [
     author: 'Sita Gupta',
     role: 'Neck Mobility',
     rating: 5,
-    text: "The exercises are easy to follow and Dr. Anshikaa makes the sessions really interesting.",
+    text: "The exercises are easy to follow and Anshikka makes the sessions really interesting.",
     time: "3 days ago",
   },
   {

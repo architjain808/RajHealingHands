@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${scrolled || isOpen ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-teal-50 py-2' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${scrolled || isOpen ? 'bg-white shadow-md border-b border-teal-50 py-2' : 'bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
             <div className="bg-teal-400 p-2 rounded-xl group-hover:rotate-12 transition-transform shadow-md">
               <Activity className="h-6 w-6 text-white" />
             </div>
-            <span className={`text-2xl font-extrabold tracking-tight group-hover:text-teal-600 transition-colors ${scrolled || isOpen ? 'text-gray-800' : 'text-gray-900'}`}>
+            <span className={`text-2xl font-extrabold tracking-tight group-hover:text-teal-600 transition-colors ${scrolled || isOpen ? 'text-gray-900' : 'text-gray-900'}`}>
               Raj Healing Hands
             </span>
           </div>
@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
           <div className="md:hidden z-[1001]">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-teal-600 p-2 focus:outline-none"
+              className="text-gray-900 hover:text-teal-600 p-2 focus:outline-none"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
@@ -92,11 +92,11 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <MotionDiv
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: '100vh' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/98 backdrop-blur-xl border-t border-gray-100 shadow-xl fixed top-0 left-0 w-full z-[999] pt-24"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden bg-white border-t border-gray-100 shadow-2xl fixed top-0 left-0 w-full z-[999] pt-24 pb-8"
           >
             <div className="flex flex-col p-6 space-y-4">
               {navItems.map((item) => (
