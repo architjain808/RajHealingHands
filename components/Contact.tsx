@@ -118,7 +118,7 @@ const Contact: React.FC = () => {
                 className="bg-white rounded-2xl p-6 border-2 border-slate-100 shadow-lg relative overflow-hidden group cursor-pointer hover:border-teal-200"
                 onClick={() =>
                   window.open(
-                    "https://search.google.com/local/writereview?placeid=ChByYWogaGVhbGluZyBoYW5kSO2O7quQvYCACFoeEAAQARACGAAYARgCIhByYWogaGVhbGluZyBoYW5kkgEUcGh5c2lvdGhlcmFweV9jZW50ZXI",
+                    "https://share.google/reaJO62BfvPfXWDu3",
                     "_blank"
                   )
                 }
