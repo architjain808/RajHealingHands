@@ -53,8 +53,9 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0 font-medium">
-              Raj Healing Hands makes physiotherapy easy, comfortable, and
-              friendly! We help you get back to your best self with a smile.
+              Raj healing hands Physiotherapy and rehabilitation centre makes
+              physiotherapy easy, comfortable, and friendly! We help you get
+              back to your best self with a smile.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start">

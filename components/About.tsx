@@ -72,7 +72,7 @@ const About: React.FC = () => {
             className="w-full md:w-1/2 text-center md:text-left"
           >
             <div className="inline-block bg-teal-100 text-teal-700 font-bold px-4 py-1 rounded-full text-sm mb-4">
-              👋 Meet Anshikka Arora
+              👋 Meet Dr. Anshikka Arora (PT)
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
               Healing with a <br />
