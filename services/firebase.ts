@@ -2,12 +2,12 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCLOp6H-BZwYi5XT_cdEeRhvWO7DgVM5io",
-    authDomain: "raj-healing-hands.firebaseapp.com",
-    projectId: "raj-healing-hands",
-    storageBucket: "raj-healing-hands.firebasestorage.app",
-    messagingSenderId: "748796707156",
-    appId: "1:748796707156:web:c4cfaa419970e87cc248c1"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
