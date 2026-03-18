@@ -1,4 +1,4 @@
-import { LucideIcon } from 'lucide-react';
+import { LucideIcon } from "lucide-react";
 
 export interface Service {
   id: string;
@@ -27,6 +27,8 @@ export interface Patient {
   id: string;
   name: string;
   contact: string;
+  countryCode: string;
+  age?: number;
   date: string;
   dayOfOPD: number;
   condition: string;
